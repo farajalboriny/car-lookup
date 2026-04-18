@@ -1,0 +1,52 @@
+@page
+@model CarLookup.Web.Pages.ResultsModel
+@{
+    ViewData["Title"] = "Results";
+    string typeLabel = Model.Models.Count == 1 ? Model.VehicleType : Model.VehicleType + "s";
+}
+
+<div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+    <div class="summary-header">
+        @if (Model.Models.Count == 0)
+        {
+            <span>No models found for <strong>@Model.MakeName</strong> (@Model.Year) in category <strong>@Model.VehicleType</strong>.</span>
+        }
+        else
+        {
+            <span>Showing <strong>@Model.Models.Count</strong> @Model.MakeName @typeLabel from <strong>@Model.Year</strong></span>
+        }
+    </div>
+    <a asp-page="/Index" class="btn btn-outline-secondary">&larr; New search</a>
+</div>
+
+@if (Model.Models.Count > 0)
+{
+    <div class="results-card">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 10rem;">Model ID</th>
+                        <th scope="col">Model name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (VehicleModel model in Model.Models)
+                    {
+                        <tr>
+                            <td class="model-id">@(model.Id)</td>
+                            <td>@(model.Name)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+else
+{
+    <div class="empty-state">
+        <p class="mb-2">No matching models were returned for this combination.</p>
+        <p class="mb-0">Try a different year or vehicle type, or <a asp-page="/Index">start a new search</a>.</p>
+    </div>
+}
