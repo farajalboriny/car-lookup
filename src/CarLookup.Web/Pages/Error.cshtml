@@ -1,0 +1,9 @@
+@page "{code?}"
+@model ErrorModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Something went wrong</h1>
+<p class="lead">@Model.Message</p>
+<a asp-page="/Index" class="btn btn-primary">Back to search</a>
