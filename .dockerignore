@@ -1,0 +1,38 @@
+# Build / IDE / VCS artefacts — never needed inside the image
+**/bin/
+**/obj/
+**/out/
+**/publish/
+**/.vs/
+**/.vscode/
+**/.idea/
+**/.git/
+**/.gitignore
+**/.dockerignore
+**/Dockerfile
+**/*.user
+**/*.suo
+**/*.userosscache
+**/*.sln.docstates
+
+# OS cruft
+**/.DS_Store
+**/Thumbs.db
+**/ehthumbs.db
+**/Desktop.ini
+
+# Tests are not built or shipped by the image
+tests/
+
+# Docs & planning artefacts
+docs/
+
+# Local env / secrets
+**/.env
+**/.env.*
+**/appsettings.*.local.json
+**/*.secrets.json
+
+# Node stuff (if ever added)
+**/node_modules/
+**/npm-debug.log*
