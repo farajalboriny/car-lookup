@@ -1,0 +1,109 @@
+## .NET / Visual Studio / Rider / VS Code
+bin/
+obj/
+out/
+[Dd]ebug/
+[Rr]elease/
+[Dd]ebug[Pp]ublic/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+artifacts/
+publish/
+
+# Build & analysis intermediates
+*.pidb
+*.svclog
+*.pdb
+*.userprefs
+*.tss
+*.rsp
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+project.lock.json
+project.fragment.lock.json
+.vs/
+.vscode/
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+
+# User / IDE local files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+
+# Test / coverage
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+coverage*.json
+coverage*.xml
+coverage*.info
+coverage*.cobertura.xml
+*.coverage
+*.coveragexml
+
+# Rider / ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# NuGet
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+
+# ASP.NET
+*.pubxml
+*.publishproj
+PublishScripts/
+appsettings.*.local.json
+*.secrets.json
+
+# Node / front-end tooling (if ever added)
+node_modules/
+npm-debug.log*
+yarn-error.log
+package-lock.json.bak
+
+# OS cruft
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs & local env
+*.log
+logs/
+*.env
+.env
+.env.*
+!.env.example
+
+## Docker
+# Local override only — Dockerfile/.dockerignore/compose.yml are committed
+docker-compose.override.yml
+docker-compose.override.yaml
+docker-compose.*.local.yml
+.docker/
+*.pid
