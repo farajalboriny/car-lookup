@@ -1,0 +1,267 @@
+:root {
+    --brand-primary: #0d4f8b;
+    --brand-primary-hover: #0a3d6e;
+    --brand-accent: #f6a623;
+    --surface: #ffffff;
+    --surface-muted: #f6f8fb;
+    --border-soft: #e4e8ef;
+    --text-strong: #1b2733;
+    --text-muted: #5b6b7d;
+    --shadow-card: 0 6px 24px rgba(15, 39, 68, 0.08);
+    --radius-card: 14px;
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface-muted);
+    color: var(--text-strong);
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+main {
+    flex: 1;
+}
+
+.navbar {
+    background-color: var(--surface) !important;
+    border-bottom: 1px solid var(--border-soft) !important;
+    box-shadow: 0 1px 0 rgba(15, 39, 68, 0.02);
+    margin-bottom: 2.5rem !important;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    color: var(--brand-primary) !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-brand::before {
+    content: "";
+    display: inline-block;
+    width: 1.4rem;
+    height: 1.4rem;
+    background-color: var(--brand-primary);
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M5 11l1.5-4.5A2 2 0 018.4 5h7.2a2 2 0 011.9 1.5L19 11m-14 0h14m-14 0v5a1 1 0 001 1h1a1 1 0 001-1v-1h8v1a1 1 0 001 1h1a1 1 0 001-1v-5M7 14h.01M17 14h.01' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat;
+            mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M5 11l1.5-4.5A2 2 0 018.4 5h7.2a2 2 0 011.9 1.5L19 11m-14 0h14m-14 0v5a1 1 0 001 1h1a1 1 0 001-1v-1h8v1a1 1 0 001 1h1a1 1 0 001-1v-5M7 14h.01M17 14h.01' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat;
+}
+
+h1 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-strong);
+    font-size: 2rem;
+}
+
+.lead-sub {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 42rem;
+}
+
+.search-card {
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: 2rem;
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--text-strong);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.01em;
+}
+
+.form-select,
+.form-control {
+    border-radius: 8px;
+    border-color: var(--border-soft);
+    padding: 0.55rem 0.75rem;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-select:focus,
+.form-control:focus {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(13, 79, 139, 0.15);
+}
+
+.form-select:disabled {
+    background-color: #f2f4f7;
+    color: var(--text-muted);
+    cursor: not-allowed;
+}
+
+.ts-wrapper.form-select {
+    padding: 0;
+}
+
+.ts-wrapper .ts-control {
+    border-radius: 8px;
+    border-color: var(--border-soft);
+    padding: 0.55rem 0.75rem;
+    min-height: 42px;
+}
+
+.ts-wrapper.focus .ts-control {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(13, 79, 139, 0.15);
+}
+
+.ts-dropdown {
+    border-color: var(--border-soft);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(15, 39, 68, 0.1);
+}
+
+.ts-dropdown .active {
+    background-color: var(--brand-primary);
+    color: #fff;
+}
+
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 0.55rem 1.25rem;
+    transition: transform 0.08s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-primary {
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
+}
+
+.btn-primary:hover:not(:disabled),
+.btn-primary:focus:not(:disabled) {
+    background-color: var(--brand-primary-hover);
+    border-color: var(--brand-primary-hover);
+    box-shadow: 0 4px 12px rgba(13, 79, 139, 0.25);
+}
+
+.btn-primary:disabled {
+    background-color: #9fb2c5;
+    border-color: #9fb2c5;
+    opacity: 1;
+}
+
+.btn-outline-secondary {
+    color: var(--text-strong);
+    border-color: var(--border-soft);
+    background: var(--surface);
+}
+
+.btn-outline-secondary:hover {
+    background: var(--surface-muted);
+    color: var(--text-strong);
+    border-color: #c7d0db;
+}
+
+.summary-header {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.summary-header strong {
+    color: var(--text-strong);
+}
+
+.results-card {
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: var(--surface-muted);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border-soft);
+    padding: 0.9rem 1rem;
+}
+
+.table tbody td {
+    padding: 0.85rem 1rem;
+    border-top: 1px solid var(--border-soft);
+    color: var(--text-strong);
+    vertical-align: middle;
+}
+
+.table tbody tr:hover td {
+    background-color: var(--surface-muted);
+}
+
+.table .model-id {
+    font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.empty-state {
+    background: var(--surface);
+    border: 1px dashed var(--border-soft);
+    border-radius: var(--radius-card);
+    padding: 2.5rem;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.alert {
+    border-radius: 10px;
+    border: none;
+    font-size: 0.95rem;
+}
+
+.alert-warning {
+    background-color: #fff4e0;
+    color: #7a4b00;
+}
+
+footer {
+    background-color: var(--surface);
+    border-top: 1px solid var(--border-soft) !important;
+    color: var(--text-muted) !important;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--brand-primary);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+    .search-card {
+        padding: 1.25rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
