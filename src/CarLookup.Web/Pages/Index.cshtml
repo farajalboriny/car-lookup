@@ -1,0 +1,48 @@
+@page
+@model CarLookup.Web.Pages.IndexModel
+@{
+    ViewData["Title"] = "Search";
+}
+
+<div class="mb-4">
+    <h1 class="mb-2">Find vehicle models</h1>
+    <p class="lead-sub mb-0">Pick a make, year, and vehicle type to see the matching models from the NHTSA vPIC database.</p>
+</div>
+
+<div class="search-card">
+    <form method="get" asp-page="/Results" class="row g-4" id="searchForm">
+        <div class="col-md-4">
+            <label for="makeSelect" class="form-label">Make</label>
+            <select id="makeSelect" name="makeId" class="form-select" required>
+                <option value="">Choose a make…</option>
+                @foreach (var make in Model.Makes)
+                {
+                    <option value="@make.Id" data-name="@make.Name">@make.Name</option>
+                }
+            </select>
+            <input type="hidden" id="makeNameInput" name="makeName" />
+        </div>
+
+        <div class="col-md-4">
+            <label for="yearSelect" class="form-label">Year</label>
+            <select id="yearSelect" name="year" class="form-select" required>
+                <option value="">Choose a year…</option>
+                @foreach (var year in Model.Years)
+                {
+                    <option value="@year">@year</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label for="typeSelect" class="form-label">Vehicle type</label>
+            <select id="typeSelect" name="vehicleType" class="form-select" required disabled>
+                <option value="">Pick a make first…</option>
+            </select>
+        </div>
+
+        <div class="col-12 d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary" id="searchButton" disabled>Search models</button>
+        </div>
+    </form>
+</div>
